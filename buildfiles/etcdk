@@ -1,5 +1,0 @@
-#!/sbin/openrc-run
-
-command="/opt/etcdkeeper/etcdkeeper"
-command_background=true
-pidfile="/run/${RC_SVCNAME}.pid"

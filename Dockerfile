@@ -3,14 +3,14 @@ LABEL maintainer="X.Minamoto"
 ENV DEBIAN_FRONTEND=noninteractive LANG=C.UTF-8
 
 COPY buildfiles /opt/
-COPY buildfiles/etcdk /etc/init.d/
+COPY buildfiles/etcdkrc /etc/init.d/
 
-RUN cp /opt/etcdk /etc/init.d && \
+RUN cp /opt/etcdkrc /etc/init.d && \
     apk update && \
     apk add --no-cache openrc && \
     openrc && \
     touch /run/openrc/softlevel && \
-    rc-update add etcdk && \
+    rc-update add etcdkrc && \
     rm -f /var/cache/apk/*.tar.gz
 
 ENTRYPOINT /opt/run.sh

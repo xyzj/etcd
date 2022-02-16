@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+command="/opt/ttyd"
+command_args="-p 6380 -m 2 -b /rediscli -d 1 -S -C /opt/ca/localhost.pem -K /opt/ca/localhost-key.pem -A /opt/ca/ca.pem redis-cli"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"

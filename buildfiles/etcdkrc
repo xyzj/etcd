@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+command="/opt/etcdkeeper/etcdkeeper"
+command_args="-p 2380"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
